@@ -63,8 +63,10 @@ In this phase, 12 .csv files representing each month of 2021 were downloaded loc
  2. `start_time` and `end_time`	Format cells > Time > 37:30:55
  - Added column `day_of_week` =TEXT(start_date, “dddd”)
  - Corrected formatting of some incorrect “ride_id” values
-![incorrect ride_id values](
+ 
+![incorrect ride_id values](https://github.com/aMorris2016/Cyclistic/blob/main/incorrect_ride_id.png)
 
+- Deleted rows where the `start_station` / `end_station` values were suffixed with “Bike-checking” or “Test”. It was assumed that these rides are test rides done by the company and not completed by customers, thus do not represent real user’s experience.
 
 
 
