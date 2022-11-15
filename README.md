@@ -128,6 +128,7 @@ SELECT
 FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned`
 GROUP BY member_casual
 ```
+![total rides by customer type](https://github.com/aMorris2016/Cyclistic/blob/main/totalRides_by_customerType.png)
 > Cyclistic members ride more often than casual riders.
 
 ### Ride trips per month
