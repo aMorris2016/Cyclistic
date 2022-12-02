@@ -141,6 +141,7 @@ FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned
 GROUP BY customer_type, month
 ORDER BY num_trips DESC;
 ```
+![rides per month](https://github.com/aMorris2016/Cyclistic/blob/main/ridetrips_per_month.png)
 > July and August were the best performing months for both members and casual riders. While members ride more often for the duration of 2021, usage by casual riders were higher during the summer months.
 
 ### Ride type used
