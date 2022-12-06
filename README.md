@@ -177,8 +177,7 @@ FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned
 GROUP BY customer_type, ride_month
 ORDER BY average_ride_duration DESC;
 ```
-
-
+![average ride duration by month bar chart](https://github.com/aMorris2016/Cyclistic/blob/main/ride_duration_by_month.png)
 ### Daily trips
 ```
 SELECT 
@@ -189,6 +188,7 @@ FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned
 GROUP BY customer_type, day
 ORDER BY num_trips DESC;
 ```
+![rides per day](https://github.com/aMorris2016/Cyclistic/blob/main/ridetrips_%20per_day.png)
 > Saturdays and Sundays are the most popular days for casual riders. Members rode the most on Tuesdays and Wednesdays.
 
 ### Average ride duration by day of week
@@ -201,7 +201,8 @@ FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned
 GROUP BY customer_type, day_of_week
 ORDER BY average_ride_duration;
 ```
-> Casual riders ride longer during weekends, while members ride longer on weekdays.
+![average ride duration by day bar chart](https://github.com/aMorris2016/Cyclistic/blob/main/ride_duration_by_day.png)
+> Casual users' average ride trips were twice longer during the weekends. Members weekday average ride trips range from 12.73 to 13.31 minutes, which is relatively consistent.
 
 
 
