@@ -153,6 +153,7 @@ SELECT
 FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned` 
 GROUP BY customer_type, bike_type;
 ```
+![rides by bike type](https://github.com/aMorris2016/Cyclistic/blob/main/rides_by_bike_type.png)
 > Both members and casual riders favor classic bikes over electric bikes. Docked bikes were the least used.
 
 ### Average ride duration
@@ -163,7 +164,8 @@ SELECT
 FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned`
 GROUP BY customer_type;
 ```
-> Casual riders ride significantly longer than members, with an average duration of 31.49 minutes per ride trip
+![ride duration by customer type](https://github.com/aMorris2016/Cyclistic/blob/main/ridetrip_duration.png)
+> Casual riders ride significantly longer than members with an average duration of 31.49 minutes per trip.
 
 ### Average ride duration by month
 ```
@@ -175,6 +177,7 @@ FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned
 GROUP BY customer_type, ride_month
 ORDER BY average_ride_duration DESC;
 ```
+
 
 ### Daily trips
 ```
