@@ -202,10 +202,11 @@ GROUP BY customer_type, day_of_week
 ORDER BY average_ride_duration;
 ```
 ![average ride duration by day bar chart](https://github.com/aMorris2016/Cyclistic/blob/main/ride_duration_by_day.png)
-> Casual users' average ride trips were twice longer during the weekends. Members weekday average ride trips range from 12.73 to 13.31 minutes, which is relatively consistent.
+> Casual users' average ride trips were twice longer than members' rides during the weekends. Members weekday average ride trips range from 12.73 to 13.31 minutes, which is relatively consistent.
 
-
-
+### Rides by hour
+![rides by the hour](https://github.com/aMorris2016/Cyclistic/blob/main/ride_trips_by_hour.png)
+> The busiest time for both members and casual riders is late afternoon between 4pm to 6pm. Peak usage is at 5pm with a total of 234,484 trips by casual riders and 316,250 trips by members.
 
 ## Act
 
