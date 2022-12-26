@@ -208,6 +208,12 @@ ORDER BY average_ride_duration;
 ![rides by the hour](https://github.com/aMorris2016/Cyclistic/blob/main/ride_trips_by_hour.png)
 > The busiest time for both members and casual riders is late afternoon between 4pm to 6pm. Peak usage is at 5pm with a total of 234,484 trips by casual riders and 316,250 trips by members.
 
+### Rides by start station
+![rides by start station](https://github.com/aMorris2016/Cyclistic/blob/main/ridetrips_by_end_station.png)
+
+### Rides by end station
+![rides by end station](https://github.com/aMorris2016/Cyclistic/blob/main/ridetrips_by_end_station.png)
+
 ## Act
 
 
