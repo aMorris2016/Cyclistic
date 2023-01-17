@@ -118,7 +118,11 @@ AS
 - Cleaned data and merged data set “cyclistic_2021_tripdata_cleaned” has a total of 5,530,872 rows
 
 ## Analyze and Share
-BigQuery, SQL and Tableau were used to derive insights on how Cyclistic casual users and and members ride differently. 
+BigQuery, SQL and Tableau were used to derive insights on how Cyclistic casual users and and members ride differently.
+
+Cyclistic groups customers into two categories:
+  - Members are customers who purchased annual memberships
+  - Casual riders are customers who purchased single-ride or full-day passes
 
 ### Total ride trips
 ```
@@ -129,7 +133,20 @@ FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned
 GROUP BY member_casual
 ```
 ![total rides by customer type](https://github.com/aMorris2016/Cyclistic/blob/main/totalRides_by_customerType.png)
-> Cyclistic members ride more often than casual riders.
+
+> Cyclistic members ride more often than casual riders. 54.7% of all ride trips for the year 2020 were by customers who purchased annual membership.
+
+### Bike type used
+```
+SELECT 
+  member_casual AS customer_type,
+  rideable_type AS bike_type,
+  COUNT(ride_id) AS num_ride_type
+FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned` 
+GROUP BY customer_type, bike_type;
+```
+![rides by bike type](https://github.com/aMorris2016/Cyclistic/blob/main/rides_by_bike_type.png)
+> Both members and casual riders favor classic bikes over electric bikes. Docked bikes were the least used. Members did not use docked bikes.
 
 ### Ride trips per month
 ```
@@ -142,20 +159,9 @@ GROUP BY customer_type, month
 ORDER BY num_trips DESC;
 ```
 ![rides per month](https://github.com/aMorris2016/Cyclistic/blob/main/ridetrips_per_month.png)
-> July and August were the best performing months for both members and casual riders. While members ride more often for the duration of 2021, usage by casual riders were higher during the summer months.
-
-### Ride type used
-```
-SELECT 
-  member_casual AS customer_type,
-  rideable_type AS bike_type,
-  COUNT(ride_id) AS num_ride_type
-FROM `case-study-cyclistic-365423.cyclistic_2021.cyclistic_2021_tripdata_cleaned` 
-GROUP BY customer_type, bike_type;
-```
-![rides by bike type](https://github.com/aMorris2016/Cyclistic/blob/main/rides_by_bike_type.png)
-> Both members and casual riders favor classic bikes over electric bikes. Docked bikes were the least used.
-
+> July and August were the best performing months for both members and casual riders. While members rode more often for the duration of 2021, usage by casual riders were higher during the summer months. Number of rides began to decline beginning September going into the winter months. 
+* Note that Chicago winters are icy and many may find that cycling in freezing weather is not comfortable, thus explains the overall decline in ride trips during the cold months.*
+ 
 ### Average ride duration
 ```
 SELECT  
@@ -178,6 +184,8 @@ GROUP BY customer_type, ride_month
 ORDER BY average_ride_duration DESC;
 ```
 ![average ride duration by month bar chart](https://github.com/aMorris2016/Cyclistic/blob/main/ride_duration_by_month.png)
+> The average length of rides by members remain relatively consistent throught the year ranging from 10.62 to 18.25 minutes.
+
 ### Daily trips
 ```
 SELECT 
@@ -202,11 +210,12 @@ GROUP BY customer_type, day_of_week
 ORDER BY average_ride_duration;
 ```
 ![average ride duration by day bar chart](https://github.com/aMorris2016/Cyclistic/blob/main/ride_duration_by_day.png)
-> Casual users' average ride trips were twice longer than members' rides during the weekends. Members weekday average ride trips range from 12.73 to 13.31 minutes, which is relatively consistent.
+> The bar graph shows that the average ride duration of members and casual riders follow the same trend. Rides are longer during the weekends, then dips in the middle of the week. Casual users' average ride trips were twice longer than members' rides during the weekends. Members weekday average ride trips range from 12.73 to 13.31 minutes, which is relatively consistent.
 
 ### Rides by hour
 ![rides by the hour](https://github.com/aMorris2016/Cyclistic/blob/main/ride_trips_by_hour.png)
-> The busiest time for both members and casual riders is late afternoon between 4pm to 6pm. Peak usage is at 5pm with a total of 234,484 trips by casual riders and 316,250 trips by members.
+> - The busiest time for both members and casual riders is late afternoon between 4pm to 6pm. Peak usage is at 5pm with a total of 234,484 trips by casual riders and 316,250 trips by members.
+> - Number of trips by members spike at 7am and then again at 5pm. These times corresponds to office hours which may be indicative that members are riding bikes for commuting to work.
 
 ### Rides by start station
 ![rides by start station](https://github.com/aMorris2016/Cyclistic/blob/main/rides_by_start_station.png)
@@ -214,6 +223,20 @@ ORDER BY average_ride_duration;
 ### Rides by end station
 ![rides by end station](https://github.com/aMorris2016/Cyclistic/blob/main/ridetrips_by_end_station.png)
 
-## Act
+> Streeter Dr & Grand Ave, Millenium Park and Michigan Ave & Oak St stations are the top 10 start and end stations for casual riders. A quick rundown of the locations of the top 10 stations reveals that these are along or near Chicago's popular tourist attractions. The amount of traffic in these locations suggests that casual riders are more likely tourists or visitors using the bikes for leisure. 
 
+## Act
+Based on the insights gathered above, the following are the recommendations to the Marketing team on how to convert casual riders to members:
+
+The main proposition is to offer perks and benefits exclusive only to members in order to make the investment of the annual membership more beneficial and attractive. This can be in the form of discount for signing up to be a member, special rates for members only or discount to partner merchants.
+
+* Average length of trips by casual riders are longer. Offer competitive pricing options, e.g. lower rates for longer trips.
+
+* Casual riders use bike-sharing for leisure and they are more likely visitors going to tourist locations. Create other types of memberships: 
+  - Weekend membership 
+  - 3 day or 5 day visitor membership
+
+* The most popular stations frequented by casual riders are near tourist attractions. Offer discounts to partner merchants, museums and establishments that are unlocked to those who purchase a membership.
+
+* To target the casual riders, run the marketing campaign and promotions during the months and days when there is the most traffic by casual riders - Summer months, weekends. 
 
